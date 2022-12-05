@@ -2,6 +2,11 @@
 
 $string = file_get_contents('dischi.json');
 
-$discs = json_decode($string);
+$discs = json_decode($string, true);
 
-var_dump($discs);
+
+//logica
+
+
+header('Content-Type: application/json');
+echo json_encode($discs);
