@@ -18,8 +18,32 @@
 
   <div id="app">
 
+    <header>
+      <h1>THIS.LOGO</h1>
+    </header>
 
+    <main class="container">
 
+      <div class="row">
+
+        <div class="col-4 my-card">
+
+          <div class="my-card-elements">
+
+            <div class="my-card-img">
+
+              <img src="" alt="">
+            </div>
+            <div class="my-card-text">
+              
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
 
   </div>
 
