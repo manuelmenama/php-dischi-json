@@ -19,8 +19,31 @@ header{
   margin-bottom: 3rem;
 }
 
+.my-wrapper{
+  width: 100%;
+}
+
 .my-card{
   background-color: #112030;
   min-height: 500px;
+  width: calc(100% / 3 - 2rem);
   border-radius: 2rem;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.my-card-img{
+  padding-top: 3rem;
+  text-align: center;
+}
+
+.my-card-img img{
+  max-width: 60%;
+  margin-bottom: 4rem;
+}
+
+.my-card-text{
+  text-align: center;
 }

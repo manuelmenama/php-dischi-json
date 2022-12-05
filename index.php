@@ -24,18 +24,23 @@
 
     <main class="container">
 
-      <div class="row">
+      <div class="row my-wrapper">
 
-        <div class="col-4 my-card">
+        <div
+          v-for="(disc, index) in takeDiscs"
+          :key="index"
+          class="col-4 my-card">
 
           <div class="my-card-elements">
 
             <div class="my-card-img">
 
-              <img src="" alt="">
+              <img :src="disc.poster" alt="">
             </div>
             <div class="my-card-text">
-              
+              <h3>{{disc.title}}</h3>
+              <h6>{{disc.author}}</h6>
+              <h3>{{disc.year}}</h3>
             </div>
           </div>
 

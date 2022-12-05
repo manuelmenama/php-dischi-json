@@ -4,8 +4,8 @@ createApp({
 
   data() {
     return{
-      apiUrl: "server.php"
-
+      apiUrl: "server.php",
+      takeDiscs: []
     }
   },
   methods:{
@@ -13,6 +13,8 @@ createApp({
       axios.get(this.apiUrl)
       .then(result =>  {
         console.log(result.data);
+        this.takeDiscs = result.data;
+        console.log(takeDiscs);
       })
     }
   },
