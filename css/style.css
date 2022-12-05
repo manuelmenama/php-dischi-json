@@ -15,7 +15,10 @@ header{
   background-color: #06131f;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
   padding-left: 2rem;
+  padding-right: 2rem;
   margin-bottom: 3rem;
 }
 

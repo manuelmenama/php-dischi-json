@@ -5,7 +5,8 @@ createApp({
   data() {
     return{
       apiUrl: "server.php",
-      takeDiscs: []
+      takeDiscs: [],
+      selectedGenre: ""
     }
   },
   methods:{
@@ -14,7 +15,20 @@ createApp({
       .then(result =>  {
         console.log(result.data);
         this.takeDiscs = result.data;
-        console.log(takeDiscs);
+      })
+    },
+    genreFilter(){
+      console.log(this.selectedGenre);
+      const data = {
+        postGenre: this.selectedGenre
+      }
+
+      axios.post(this.apiUrl, data, {
+        headers: {'Content-Type': "multipart/form-data"}
+      })
+      .then(response => {
+        console.log(response.data);
+        this.takeDiscs = response.data;
       })
     }
   },
