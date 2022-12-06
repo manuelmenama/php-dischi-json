@@ -24,7 +24,7 @@
       <h1>THIS.LOGO</h1>
       
       <select class="form-select my-form-select w-25" aria-label="Default select example" v-model="selectedGenre" @change="genreFilter()">
-        <option selected>Open this select menu</option>
+        <option selected value="">Open this select menu</option>
         <option value="Rock">Rock</option>
         <option value="Pop">Pop</option>
         <option value="Metal">Metal</option>

@@ -12,6 +12,8 @@ if(isset($_POST['postGenre'])){
 
     if($album["genre"]===$_POST['postGenre']){
       $filtered[] = $album;
+    }elseif($_POST['postGenre']===""){
+      $filtered = $discs;
     }
   }
 }else{
