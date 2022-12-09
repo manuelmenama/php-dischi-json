@@ -31,10 +31,55 @@
         <option value="Jazz">Jazz</option>
       </select>
 
+      <button @click="toggleForm()" type="button" class="btn btn-primary">Add New Album</button>
+
     </header>
 
 
     <main class="container">
+
+      <div v-if="isOpenForm" class="my-form">
+
+        <div class="card my-form-card">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <span>Add New Album Form</span>
+            <button @click="toggleForm()" type="button" class="btn btn-outline-secondary my-colosing-btn">X</button>
+          </div>
+          <div class="card-body">
+            
+          
+            <div class="mb-3">
+              <label for="title" class="form-label">Titolo</label>
+              <input type="text" class="form-control" id="title" aria-describedby="emailHelp" v-model="title">
+            </div>
+            <div class="mb-3">
+              <label for="author" class="form-label">Autore</label>
+              <input type="text" class="form-control" id="author" v-model="author">
+            </div>
+            <div class="mb-3">
+              <label for="year" class="form-label">Anno</label>
+              <input type="text" class="form-control" id="year" v-model="year">
+            </div>
+            <div class="mb-3">
+              <label for="cover-path" class="form-label">Location della cover</label>
+              <input type="text" class="form-control" id="cover-path" v-model="poster">
+            </div>
+
+            <label for="genre" class="form-label">Genere</label>
+            <select class="form-select my-form-select mb-3" aria-label="Default select example" id="genre" v-model="genre">
+              <option selected value="">Open this select menu</option>
+              <option value="Rock">Rock</option>
+              <option value="Pop">Pop</option>
+              <option value="Metal">Metal</option>
+              <option value="Jazz">Jazz</option>
+            </select>
+            <button type="button" class="btn btn-primary" @click="addAlbum()">Aggiungi</button>
+            
+
+          </div>
+        </div>
+
+      </div>
 
       <div class="row my-wrapper">
 
@@ -52,7 +97,6 @@
             <div class="my-card-text">
               <h3>{{disc.title}}</h3>
               <h6>{{disc.author}}</h6>
-              <h3>{{disc.year}}</h3>
             </div>
           </div>
 

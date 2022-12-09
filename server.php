@@ -6,7 +6,18 @@ $discs = json_decode($string, true);
 
 $filtered = [];
 
+if(!empty($_POST['postedAlbumTitle'])){
+  $new_album = [
+    "title" => $_POST['postedAlbumTitle'],
+    "author" => $_POST['postedAlbumAuthor'],
+    "year" => $_POST['postedAlbumYear'],
+    "poster" => $_POST['postedAlbumPoster'],
+    "genre" => $_POST['postedAlbumGenre']
+  ];
+  $discs[] = $new_album;
 
+  file_put_contents('dischi.json', json_encode($discs));
+}
 if(isset($_POST['postGenre'])){
   foreach($discs as $album){
 
@@ -19,6 +30,9 @@ if(isset($_POST['postGenre'])){
 }else{
   $filtered = $discs;
 }
+
+
+
 
 header('Content-Type: application/json');
 echo json_encode($filtered);
